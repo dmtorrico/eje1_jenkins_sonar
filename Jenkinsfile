@@ -23,8 +23,8 @@ pipeline {
                     steps {
                         sh """
                             ./gradlew sonarqube \
-                            -Dsonar.projectKey=mi-proyecto \
-                            -Dsonar.organization=mi-organizacion \
+                            -Dsonar.projectKey=eje1_jenkins_sonar \
+                            -Dsonar.organization=dmtorrico \
                             -Dsonar.host.url=${SONAR_HOST_URL} \
                             -Dsonar.token=${SONAR_TOKEN}
                         """
