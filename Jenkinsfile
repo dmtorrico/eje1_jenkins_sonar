@@ -2,11 +2,6 @@ pipeline {
 
     agent any
 
-    tools {
-        jdk 'JDK17'
-        gradle 'Gradle'
-    }
-
     environment {
         SONAR_TOKEN = credentials('sonar-token')
         SONAR_HOST_URL = 'https://sonarcloud.io'
