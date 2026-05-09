@@ -3,8 +3,10 @@ pipeline {
     agent any
 
     environment {
-        SONAR_TOKEN = credentials('sonarqube-token')
-        SONAR_HOST_URL = 'https://sonarcloud.io'
+        SONAR_SERVER = 'sonarqube-server'
+        // EXTRAEMOS DINÁMICAMENTE EL NOMBRE DEL REPO
+        // Esto evita que tengas que cambiar el nombre manualmente en cada proyecto
+        REPO_NAME = "${env.GIT_URL.split('/').last().split('\\.').first()}"
     }
 
     stages {
@@ -23,8 +25,9 @@ pipeline {
                     steps {
                         sh """
                             ./gradlew sonarqube \
-                            -Dsonar.projectKey=eje1_jenkins_sonar \
                             -Dsonar.organization=dmtorrico \
+                            -Dsonar.projectKey=${env.REPO_NAME} \
+                            -Dsonar.projectName=${env.REPO_NAME} \
                             -Dsonar.host.url=${SONAR_HOST_URL} \
                             -Dsonar.token=${SONAR_TOKEN}
                         """
