@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-09T17:36:09.170Z" hostname="codespaces-df0f36" time="0.071">
+  <properties/>
+  <testcase name="testSumar()" classname="com.example.AppTest" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
