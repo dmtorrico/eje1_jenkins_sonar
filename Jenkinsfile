@@ -28,9 +28,7 @@ pipeline {
                             ./gradlew sonarqube \
                             -Dsonar.organization=dmtorrico \
                             -Dsonar.projectKey=${env.REPO_NAME} \
-                            -Dsonar.projectName=${env.REPO_NAME} \
-                            -Dsonar.host.url=${SONAR_HOST_URL} \
-                            -Dsonar.token=${SONAR_TOKEN}
+                            -Dsonar.projectName=${env.REPO_NAME}
                         """
                     }
                 }
